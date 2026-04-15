@@ -1,6 +1,3 @@
-import os
-st.write("Arquivos disponíveis:", os.listdir())
-
 import streamlit as st
 from datetime import datetime
 from docx import Document
