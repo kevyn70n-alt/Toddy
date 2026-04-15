@@ -34,8 +34,13 @@ if st.button("🚀 Gerar Documento"):
     if not pagador_nome or not pagador_cpf or not valor:
         st.warning("Preencha todos os campos")
     else:
-        doc = Document("modelo.docx")
+import os
 
+if not os.path.exists("modelo.docx"):
+    st.error("Arquivo modelo.docx não encontrado no repositório!")
+    st.stop()
+
+doc = Document("modelo.docx")
         agora = datetime.now()
         data_formatada = agora.strftime("%d/%m/%Y - %H:%M:%S")
         data_transacao = agora.strftime("%d/%m/%Y %H:%M:%S")
